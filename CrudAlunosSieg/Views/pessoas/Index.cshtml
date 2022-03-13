@@ -1,0 +1,48 @@
+﻿@model IEnumerable<CrudAlunosSieg.Models.pessoa>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div style="display: flex; align-items:center;">
+    <h2>Cadastro de Alunos SIEG</h2>
+    <img src="faviconaluno.png">
+</div>
+
+<p>
+    @Html.ActionLink("Cadastrar Aluno", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idade)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idade)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.id }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>

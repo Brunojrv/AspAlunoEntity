@@ -1,0 +1,48 @@
+﻿@model CrudAlunosSieg.Models.pessoa
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 style="font-family: 'Poppins', sans-serif;">Deletar Aluno do cadastro</h2>
+
+<h3 style="font-family: 'Poppins', sans-serif;">Tem certeza que deseja deletar o aluno?</h3>
+<div>
+    <h4 style="font-family: 'Poppins', sans-serif;">Aluno</h4>
+    <hr />
+    <dl class="dl-horizontal" style="font-family: 'Poppins', sans-serif;">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idade)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input  style="font-family: 'Poppins', sans-serif; color: whitesmoke; background-color: #6933FF;" type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>
